@@ -1,33 +1,45 @@
-<h1>ActivityLogs#index</h1>
+<h1 class="my-4">Log de Actividades</h1>
+
+<%= render 'activity_logs/filter/form' %>
 
 <% if @response.blank? %>
-  <p>No hay elementos a mostrar</p>
+
+  <div class="alert alert-primary fade show">
+    <strong>Información!</strong> Aun no hay elementos registrados en la base de datos
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
 <% else %>
-  <table>
-    <thead>
-      <tr>
-        <td>Bebe</td>
-        <td>Asistente</td>
-        <td>Actividad</td>
-        <td>Inicio</td>
-        <td>Estatus</td>
-        <td>Duración</td>
-      </tr>
-    </thead>
-    <tbody>
-      <% @response.each do |el| %>
-      <tr>
-        <td><%= el['baby_name'] %></td>
-        <td><%= el['teacher'] %></td>
-        <td><%= el['activity'] %></td>
-        <td><%= el['start_time'] %></td>
-        <td><%= getStatus(el) %></td>
-        <td><%= getDuration(el) %></td>
-        <td></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Bebe</th>
+          <th>Asistente</th>
+          <th>Actividad</th>
+          <th>Inicio</th>
+          <th>Estatus</th>
+          <th>Duración</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @response.each do |el| %>
+        <tr>
+          <td><%= el['baby_name'] %></td>
+          <td><%= el['teacher'] %></td>
+          <td><%= el['activity'] %></td>
+          <td><%= el['start_time'] %></td>
+          <td><%= getStatus(el) %></td>
+          <td><%= getDuration(el) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
 <% end %>
 
 

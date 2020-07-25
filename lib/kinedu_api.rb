@@ -7,8 +7,20 @@ class KineduAPI
   base_uri 'http://localhost:3000/'
   format :json
 
-  def self.get_activity_logs
-    get('/activity_logs.json')
+  def self.get_activity_logs(fullpath)
+      get("#{fullpath}.json")
+  end
+
+  def self.get_babies
+    get('/babies.json')
+  end
+
+  def self.get_assistants
+    get('/assistants.json')
+  end
+
+  def self.get_activities
+    get('/activities.json')
   end
 
 end

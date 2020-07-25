@@ -16,11 +16,15 @@
       </tr>
       <tr>
         <td><span class="montserrat darkgray">GET api/babies </span></td>
-        <td>Obtiene la información de los bebes, retornando un objeto con las siguientes caracteristicas <span class="montserrat">[ name, age_in_months, mother_name, father_name, address, phone ]</span></td>
+        <td>Obtiene la información de los bebes, retornando un objeto con las siguientes caracteristicas <span class="montserrat">[ id, name, age_in_months, mother_name, father_name, address, phone ]</span></td>
       </tr>
       <tr>
         <td><span class="montserrat darkgray">GET api/babies/:id/activity_logs </span></td>
         <td>Obtiene las actividades especificas del bebe, retornando un objeto con los siguientes campos <span class="montserrat">[ id, baby_id, baby_name, teacher, start_time, stop_time ]</span>, en esta ruta se omiten los campos <span class="montserrat">[ duration, comments ]</span></td>
+      </tr>
+      <tr>
+        <td><span class="montserrat darkgray">GET api/assistants/ </span></td>
+        <td>Obtiene todos los asistentes, retornando un objeto con los siguientes campos <span class="montserrat">[ id, name, address, phone, group ]</span></td>
       </tr>
       <tr>
         <td><span class="montserrat darkgray">GET api/activity_logs </span></td>
@@ -48,5 +52,6 @@
     <li>Modificacion de valores antes de almacenar la información en la base de datos</li>
     <li>Para mantener todo limpio y ordenado, la mayoria del pre procesamiento se realiza en los Serializers y en los modelos, las vistas y los controladores permanecen en su forma basica</li>
     <li>Se utilizo Scaffold para generar la estructura básica de las tablas principales <span class="montserrat">[ Babies, Assistants, Activities, ActivityLogs ]</span></li>
+    <li>Para las tablas babies, assistants y activites, al final se decidio retornar tambien el ID, esto es debido a que en la aplicación se realizara un filtrado de información y es mas correcto hacerlo con el ID que hacer comparaciones en texto</li>
   </ul>
 </blockquote>

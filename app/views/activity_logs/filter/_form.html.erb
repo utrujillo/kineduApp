@@ -1,0 +1,22 @@
+<%= form_for( activity_logs_path , method: :create, html: { class: 'form-horizontal' }) do |f| %>
+
+  <div class="row mb-3">
+    <div class="col-xl-3 col-lg-3 col-md-6 col-xs-12">
+      <h6 class="text-center">Bebés</h6>
+      <%= f.select :baby_id, @babies.map { |i| [ i['name'], i['id']] }, { prompt: '- Seleccionar -'}, {:class => 'form-control'} %>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-6 col-xs-12">
+      <h6 class="text-center">Asistentes</h6>
+      <%= f.select :assistant_id, @assistants.map { |i| [ i['name'], i['id'] ] }, { prompt: '- Seleccionar -'}, {:class => 'form-control'} %>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-6 col-xs-12">
+      <h6 class="text-center">Estatus</h6>
+      <%= f.select :status, [['Todos', 1], ['Terminado', 2], ['En progreso', 3]], { prompt: '- Seleccionar -'}, {:class => 'form-control'} %>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-6 col-xs-12">
+      <h6>&nbsp;</h6>
+      <%= f.submit 'Buscar', :class =>"custom-buttom btn-block" %>
+    </div>
+  </div>
+
+<% end %>
