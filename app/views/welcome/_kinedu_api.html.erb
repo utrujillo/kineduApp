@@ -51,7 +51,8 @@
     <li>Validaciones personalizadas, revisar el archivo <span class="montserrat">app/models/activity_logs</span></li>
     <li>Modificacion de valores antes de almacenar la información en la base de datos</li>
     <li>Para mantener todo limpio y ordenado, la mayoria del pre procesamiento se realiza en los Serializers y en los modelos, las vistas y los controladores permanecen en su forma basica</li>
-    <li>Se utilizo Scaffold para generar la estructura básica de las tablas principales <span class="montserrat">[ Babies, Assistants, Activities, ActivityLogs ]</span></li>
+    <li>Se utilizo Scaffold para generar la estructura básica de las tablas principales <span class="montserrat">[ Baby, Assistant, Activity, ActivityLogs ]</span></li>
     <li>Para las tablas babies, assistants y activites, al final se decidio retornar tambien el ID, esto es debido a que en la aplicación se realizara un filtrado de información y es mas correcto hacerlo con el ID que hacer comparaciones en texto</li>
+    <li>Se crean scopes para filtrar la información de activity_logs</li>
   </ul>
 </blockquote>

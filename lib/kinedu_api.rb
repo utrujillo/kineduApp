@@ -4,7 +4,7 @@ class KineduAPI
   include HTTParty
   format :json
 
-  base_uri 'http://localhost:3000/'
+  base_uri 'https://kineduapi.herokuapp.com/'
   format :json
 
   def self.get_activity_logs(fullpath)
