@@ -1,0 +1,52 @@
+<h6 class="mt-3">Kinedu API</h6>
+<p>Se desarrola un API REST utilizando Ruby on Rails 5.2, la base de datos solicitada era MySQL, pero como el proyecto se subio a Heroku, se decidio utilizar postgreSQL, a continuación las actividades realizadas:</p>
+
+<div class="table_responsive">
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th width="270">Petición</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="montserrat darkgray">GET api/activities </span></td>
+        <td>Muestra el listado de actividades disponibles, retorna un arreglo <span class="montserrat">[ id, name, description ]</span></td>
+      </tr>
+      <tr>
+        <td><span class="montserrat darkgray">GET api/babies </span></td>
+        <td>Obtiene la información de los bebes, retornando un objeto con las siguientes caracteristicas <span class="montserrat">[ name, age_in_months, mother_name, father_name, address, phone ]</span></td>
+      </tr>
+      <tr>
+        <td><span class="montserrat darkgray">GET api/babies/:id/activity_logs </span></td>
+        <td>Obtiene las actividades especificas del bebe, retornando un objeto con los siguientes campos <span class="montserrat">[ id, baby_id, baby_name, teacher, start_time, stop_time ]</span>, en esta ruta se omiten los campos <span class="montserrat">[ duration, comments ]</span></td>
+      </tr>
+      <tr>
+        <td><span class="montserrat darkgray">GET api/activity_logs </span></td>
+        <td>Obtiene todas las asignaciones, esta sección es lo que se mostrará en el Log de actividades, retornando un objeto con los siguientes campos <span class="montserrat">[ id, baby_id, baby_name, teacher, start_time, stop_time , duration, comments ]</span></td>
+      </tr>
+      <tr>
+        <td><span class="montserrat darkgray">POST api/activity_logs </span></td>
+        <td>Crea una nueva asignación, retorna un objeto con la información almacenada en la base de datos  <span class="montserrat">[ id, baby_id, baby_name, teacher, start_time, stop_time , duration, comments ]</span></td>
+      </tr>
+      <tr>
+        <td><span class="montserrat darkgray">PUT api/activity_logs/:id </span></td>
+        <td>Actualiza una asignación, es necesario enviar el identificador de la misma, retorna <span class="montserrat">[ id, baby_id, baby_name, teacher, start_time, stop_time , duration, comments ]</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<blockquote>
+  <p>Para desarrollar cada una de estas peticiones se utilizan diferentes tecnicas:</p>
+  <ul>
+    <li>Serializers personalizados para controlar la información que es retornada</li>
+    <li>Internacionalización para traducir de forma correcta los mensajes de error, esta información puede ser encontrada en el archivo <span class="montserrat">config/locales/es/acitivy_logs.es.yml</span></li>
+    <li>Validaciones en los modelos</li>
+    <li>Validaciones personalizadas, revisar el archivo <span class="montserrat">app/models/activity_logs</span></li>
+    <li>Modificacion de valores antes de almacenar la información en la base de datos</li>
+    <li>Para mantener todo limpio y ordenado, la mayoria del pre procesamiento se realiza en los Serializers y en los modelos, las vistas y los controladores permanecen en su forma basica</li>
+    <li>Se utilizo Scaffold para generar la estructura básica de las tablas principales <span class="montserrat">[ Babies, Assistants, Activities, ActivityLogs ]</span></li>
+  </ul>
+</blockquote>

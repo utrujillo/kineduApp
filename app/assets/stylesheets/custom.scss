@@ -1,0 +1,36 @@
+/*
+  Estilos generales
+*/
+
+.bg-custom{ background: #1B75BB; }
+.logo{ width: 112px; }
+.darkgray{ color: darkgray }
+.montserrat{ 
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 300;
+}
+
+thead > tr > th {
+  background: #81c16a;
+  color: white;
+  height: 50px;
+  line-height: 50px;
+  border-top: 1px solid #81c16a;
+  border-bottom: 1px solid #81c16a;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}

@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+@import "bootstrap";
+@import "custom";
+
+body, html{ font-family: 'Open Sans', sans-serif; }
+h1, h2, h3, h4, h5, h6 { 
+  color: #1B75BB; 
+  &:hover {
+    color: #81c16a;
+    cursor: default;
+  }
+}
